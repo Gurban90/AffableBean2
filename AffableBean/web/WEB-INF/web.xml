@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
-
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
-
     <jsp-config>
         <jsp-property-group>
             <url-pattern>/index.jsp</url-pattern>
@@ -15,5 +13,11 @@
             <include-coda>/WEB-INF/jspf/footer.jspf</include-coda>
         </jsp-property-group>
     </jsp-config>
-
+    <resource-ref>
+        <description>Connects to database for AffableBean application</description>
+        <res-ref-name>jdbc/AffableBeanSource</res-ref-name>
+        <res-type>javax.sql.ConnectionPoolDataSource</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
 </web-app>
